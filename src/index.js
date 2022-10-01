@@ -2,7 +2,7 @@ import App from './App';
 import { createRoot } from 'react-dom/client'
 import React from 'react';
 
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { getAuth, signInWithPopup } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import 'firebase/firestore'
 import 'firebase/auth'
@@ -19,16 +19,8 @@ const app = initializeApp({
 });
 
 
-const provider = new GoogleAuthProvider();
 
 const auth = getAuth()
-
-const fetchData = async () => {
-   await signInWithPopup(auth, provider).then((res) =>
-      localStorage.setItem('profile', JSON.stringify(res.user))
-   )
-
-}
 
 export const Context = React.createContext(null)
 
@@ -40,8 +32,6 @@ export const Context = React.createContext(null)
 
 const root = createRoot(document.getElementById('root'));
 root.render(
-   <Context.Provider value={fetchData}>
-      <App />
-   </Context.Provider>
+   <App />
 );
 

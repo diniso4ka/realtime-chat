@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-import { Context } from '../index'
+
+import { Context } from '../App'
 import { Box, Button, Grid } from '@mui/material'
 import { Container } from '@mui/system'
-
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { GoogleAuthProvider } from "firebase/auth";
 
 
 
 
 const Login = () => {
-   const { fetchData } = React.useContext(Context)
+   const { auth, signInWithPopup } = useContext(Context)
+
+   const login = async () => {
+      const provider = new GoogleAuthProvider();
+      const { user } = await signInWithPopup(auth, provider)
+   }
+
 
 
 
@@ -27,8 +35,8 @@ const Login = () => {
                justifyContent={'center'}
                direction={'column'}
             >
-               <Box>
-                  <Button onClick={() => fetchData()} variant='outlined'>Войти с помощью Google.</Button>
+               <Box >
+                  <Button onClick={login} variant='outlined'>Войти с помощью Google.</Button>
                </Box>
             </Grid>
          </Grid>
