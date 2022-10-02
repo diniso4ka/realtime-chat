@@ -27,7 +27,8 @@ const Navbar = () => {
          <AppBar position="static">
             <Toolbar>
                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                  {t('chat')}
+                  {t('chat    ')}
+                  СМЕНА ЯЗЫКА ВРЕМЕННО НЕ РАБОТАЕТ!
                </Typography>
                <Button style={{ marginRight: 10 }} onClick={toggle} variant='outlined' color="inherit">{t('lang')}</Button>
                {user ?
