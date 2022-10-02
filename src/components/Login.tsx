@@ -9,9 +9,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 
 
 
-const Login = () => {
-   const { auth, signInWithPopup } = useContext(Context)
-
+const Login: React.FC = () => {
    const login = async () => {
       const provider = new GoogleAuthProvider();
    }

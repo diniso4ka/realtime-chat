@@ -13,7 +13,7 @@ import Loader from './Loader';
 
 
 
-const Chat = () => {
+const Chat: React.FC = () => {
    const { auth, firestore } = useContext(Context)
    const [user] = useAuthState(auth)
    const [value, setValue] = useState('')
@@ -75,7 +75,7 @@ const Chat = () => {
                   value={value}
                   onChange={e => setValue(e.target.value)}
                   fullWidth
-                  variant={'outlined'} rowmax={2} />
+                  variant={'outlined'} />
                <Button onClick={sendMessage} variant={'outlined'}>Отправить</Button>
             </Grid>
          </Grid>

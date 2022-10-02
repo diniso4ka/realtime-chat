@@ -3,7 +3,7 @@ import './App.css';
 import AppRouter from './components/AppRouter';
 import Navbar from './components/Navbar';
 import { getAuth, signInWithPopup } from "firebase/auth";
-import { initializeApp } from "firebase/app";
+import { FirebaseApp, initializeApp } from "firebase/app";
 import 'firebase/firestore'
 import 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -15,7 +15,7 @@ export const Context = React.createContext(null)
 
 const App = () => {
 
-  const app = initializeApp({
+  const app: any = initializeApp({
     apiKey: "AIzaSyDVSj2yHPlktInKT6IKYbFLGF_T3SNi6u8",
     authDomain: "chat-react-2e98e.firebaseapp.com",
     projectId: "chat-react-2e98e",
@@ -25,8 +25,8 @@ const App = () => {
     measurementId: "G-T5CSXF9VRE"
   });
 
-  const auth = getAuth()
-  const firestore = getFirestore(app)
+  const auth: any | null = getAuth()
+  const firestore: any = getFirestore(app)
   const [user, initialising, error] = useAuthState(auth)
 
   if (initialising) {
