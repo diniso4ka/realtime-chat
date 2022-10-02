@@ -7,9 +7,11 @@ import { initializeApp } from "firebase/app";
 import 'firebase/firestore'
 import 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Loader from './components/Loader';
 import { getFirestore } from "firebase/firestore";
+
+import './config/i18n';
 
 export const Context = React.createContext(null)
 
@@ -46,7 +48,9 @@ const App = () => {
     }>
       <BrowserRouter>
         <Navbar />
-        <AppRouter />
+        <Suspense fallback=''>
+          <AppRouter />
+        </Suspense>
       </BrowserRouter>
     </Context.Provider>
   );

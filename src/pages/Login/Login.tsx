@@ -1,19 +1,26 @@
 import React, { useContext } from 'react'
 
 
-import { Context } from '../App'
+import { Context } from '../../App'
 import { Box, Button, Grid } from '@mui/material'
 import { Container } from '@mui/system'
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { useTranslation } from 'react-i18next';
 
 
 
 
 const Login: React.FC = () => {
    const { auth } = useContext(Context)
+   const { t } = useTranslation('translation')
    const login = async () => {
-      const provider = new GoogleAuthProvider();
-      const { user } = await signInWithPopup(auth, provider)
+      try {
+         const provider = new GoogleAuthProvider();
+         const { user } = await signInWithPopup(auth, provider)
+      } catch (e) {
+         console.log(e)
+         alert('Произошла ошибка')
+      }
    }
 
 
@@ -32,7 +39,7 @@ const Login: React.FC = () => {
                direction={'column'}
             >
                <Box >
-                  <Button onClick={login} variant='outlined'>Войти с помощью Google.</Button>
+                  <Button onClick={login} variant='outlined'>{t('login button')}</Button>
                </Box>
             </Grid>
          </Grid>

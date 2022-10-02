@@ -4,10 +4,11 @@ import { Container } from '@mui/system'
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { useContext, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { Context } from '../App'
-import { getDocs, collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { orderBy } from 'firebase/firestore';
-import Loader from './Loader';
+import { Context } from '../../App'
+import { collection, addDoc, serverTimestamp, query } from 'firebase/firestore';
+
+import Loader from '../../components/Loader';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -17,24 +18,32 @@ const Chat: React.FC = () => {
    const { auth, firestore } = useContext(Context)
    const [user] = useAuthState(auth)
    const [value, setValue] = useState('')
-
+   const { t } = useTranslation()
 
    const [messages, loading] = useCollectionData(
       collection(firestore, 'messages')
    )
 
-   const sendMessage = () => {
-      addDoc(collection(firestore, 'messages'),
-         {
-            uid: user.uid,
-            displayName: user.displayName,
-            photoURL: user.photoURL,
-            text: value,
-            createdAt: serverTimestamp()
-         })
-      setValue('')
-      console.log(messages);
 
+   const sendMessage = () => {
+      try {
+         if (value) {
+            addDoc(collection(firestore, 'messages'),
+               {
+                  uid: user.uid,
+                  displayName: user.displayName,
+                  photoURL: user.photoURL,
+                  text: value,
+                  createdAt: serverTimestamp()
+               })
+            setValue('')
+         } else {
+            alert('Введите текст.')
+         }
+      } catch (e) {
+         console.log(e)
+         alert('Произошла ошибка')
+      }
    }
 
    if (loading) {
@@ -55,7 +64,8 @@ const Chat: React.FC = () => {
                      marginLeft: message.uid === user.uid ? 'auto' : '10px',
                      width: 'fit-content',
                      padding: 5
-                  }}>
+                  }}
+                  >
                      <Grid container>
                         <Avatar style={{
                            marginRight: 5
@@ -76,7 +86,7 @@ const Chat: React.FC = () => {
                   onChange={e => setValue(e.target.value)}
                   fullWidth
                   variant={'outlined'} />
-               <Button onClick={sendMessage} variant={'outlined'}>Отправить</Button>
+               <Button onClick={sendMessage} variant={'outlined'}>{t('send')}</Button>
             </Grid>
          </Grid>
       </Container>

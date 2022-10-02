@@ -1,7 +1,7 @@
+import { ChatAsync } from '../pages/Chat/ChatAsync';
+import { LoginAsync } from '../pages/Login/LoginAsync';
 import React from 'react';
 import { CHAT_ROUTE, LOGIN_ROUTE, routePathType } from '../utils/consts';
-import Chat from './Chat';
-import Login from './Login';
 
 interface IRoutes {
    path: routePathType;
@@ -11,13 +11,13 @@ interface IRoutes {
 export const publicRoutes: IRoutes[] = [
    {
       path: LOGIN_ROUTE,
-      Component: Login
+      Component: LoginAsync
    }
 ]
 
 export const privateRoutes: IRoutes[] = [
    {
       path: CHAT_ROUTE,
-      Component: Chat
+      Component: ChatAsync
    }
 ]
