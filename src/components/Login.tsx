@@ -4,14 +4,16 @@ import React, { useContext } from 'react'
 import { Context } from '../App'
 import { Box, Button, Grid } from '@mui/material'
 import { Container } from '@mui/system'
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 
 
 
 const Login: React.FC = () => {
+   const { auth } = useContext(Context)
    const login = async () => {
       const provider = new GoogleAuthProvider();
+      const { user } = await signInWithPopup(auth, provider)
    }
 
 

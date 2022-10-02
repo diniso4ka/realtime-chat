@@ -3,7 +3,7 @@ import './App.css';
 import AppRouter from './components/AppRouter';
 import Navbar from './components/Navbar';
 import { getAuth, signInWithPopup } from "firebase/auth";
-import { FirebaseApp, initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
 import 'firebase/firestore'
 import 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth';
