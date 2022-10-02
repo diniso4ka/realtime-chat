@@ -4,7 +4,6 @@ import React, { useContext } from 'react'
 import { Context } from '../App'
 import { Box, Button, Grid } from '@mui/material'
 import { Container } from '@mui/system'
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { GoogleAuthProvider } from "firebase/auth";
 
 
@@ -15,10 +14,7 @@ const Login = () => {
 
    const login = async () => {
       const provider = new GoogleAuthProvider();
-      const { user } = await signInWithPopup(auth, provider)
    }
-
-
 
 
 

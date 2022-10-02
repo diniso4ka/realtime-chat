@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { CHAT_ROUTE, LOGIN_ROUTE } from '../utils/consts'
 import { privateRoutes, publicRoutes } from './routes'
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Context } from '../App';
 import Loader from './Loader';
@@ -17,7 +17,7 @@ const AppRouter = () => {
       (
          <Routes >
             {privateRoutes.map(({ path, Component }) =>
-               <Route path={path} element={<Component />} exect={true} />
+               <Route key={path} path={path} element={<Component />} exect={true} />
             )}
             <Route path='*' element={<Navigate to={CHAT_ROUTE} />} />
          </Routes>
@@ -25,7 +25,7 @@ const AppRouter = () => {
       (
          <Routes  >
             {publicRoutes.map(({ path, Component }) =>
-               <Route path={path} element={<Component />} exect={true} />
+               <Route key={path} path={path} element={<Component />} exect={true} />
             )}
             <Route path='*' element={<Navigate to={LOGIN_ROUTE} />} />
          </Routes>

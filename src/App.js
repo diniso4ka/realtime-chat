@@ -9,6 +9,7 @@ import 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import React from 'react';
 import Loader from './components/Loader';
+import { getFirestore } from "firebase/firestore";
 
 export const Context = React.createContext(null)
 
@@ -25,8 +26,8 @@ const App = () => {
   });
 
   const auth = getAuth()
+  const firestore = getFirestore(app)
   const [user, initialising, error] = useAuthState(auth)
-
 
   if (initialising) {
     return (
@@ -40,6 +41,7 @@ const App = () => {
     <Context.Provider value={{
       auth,
       signInWithPopup,
+      firestore
     }
     }>
       <BrowserRouter>

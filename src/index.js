@@ -2,30 +2,8 @@ import App from './App';
 import { createRoot } from 'react-dom/client'
 import React from 'react';
 
-import { getAuth, signInWithPopup } from "firebase/auth";
-import { initializeApp } from "firebase/app";
 import 'firebase/firestore'
 import 'firebase/auth'
-
-
-const app = initializeApp({
-   apiKey: "AIzaSyDVSj2yHPlktInKT6IKYbFLGF_T3SNi6u8",
-   authDomain: "chat-react-2e98e.firebaseapp.com",
-   projectId: "chat-react-2e98e",
-   storageBucket: "chat-react-2e98e.appspot.com",
-   messagingSenderId: "328767882037",
-   appId: "1:328767882037:web:4ec145235573618788827c",
-   measurementId: "G-T5CSXF9VRE"
-});
-
-
-
-const auth = getAuth()
-
-export const Context = React.createContext(null)
-
-
-
 
 
 
