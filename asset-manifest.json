@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/realtime-chat/static/css/main.df05faac.css",
+    "main.js": "/realtime-chat/static/js/main.55fdc45e.js",
+    "static/js/984.c2377ef2.chunk.js": "/realtime-chat/static/js/984.c2377ef2.chunk.js",
+    "static/js/919.04fa6b78.chunk.js": "/realtime-chat/static/js/919.04fa6b78.chunk.js",
+    "static/js/320.8c25abc7.chunk.js": "/realtime-chat/static/js/320.8c25abc7.chunk.js",
+    "static/js/674.e67c00b2.chunk.js": "/realtime-chat/static/js/674.e67c00b2.chunk.js",
+    "index.html": "/realtime-chat/index.html",
+    "static/media/getFetch.cjs": "/realtime-chat/static/media/getFetch.40f37ddea2378391108f.cjs",
+    "main.df05faac.css.map": "/realtime-chat/static/css/main.df05faac.css.map",
+    "main.55fdc45e.js.map": "/realtime-chat/static/js/main.55fdc45e.js.map",
+    "984.c2377ef2.chunk.js.map": "/realtime-chat/static/js/984.c2377ef2.chunk.js.map",
+    "919.04fa6b78.chunk.js.map": "/realtime-chat/static/js/919.04fa6b78.chunk.js.map",
+    "320.8c25abc7.chunk.js.map": "/realtime-chat/static/js/320.8c25abc7.chunk.js.map",
+    "674.e67c00b2.chunk.js.map": "/realtime-chat/static/js/674.e67c00b2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df05faac.css",
+    "static/js/main.55fdc45e.js"
+  ]
+}
