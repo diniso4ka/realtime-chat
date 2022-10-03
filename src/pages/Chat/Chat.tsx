@@ -8,7 +8,7 @@ import { Context } from '../../App'
 import { collection, addDoc, serverTimestamp, query } from 'firebase/firestore';
 
 import Loader from '../../components/Loader';
-import { useTranslation } from 'react-i18next';
+
 
 
 
@@ -18,7 +18,7 @@ const Chat: React.FC = () => {
    const { auth, firestore } = useContext(Context)
    const [user] = useAuthState(auth)
    const [value, setValue] = useState('')
-   const { t } = useTranslation()
+
 
    const [messages, loading] = useCollectionData(
       collection(firestore, 'messages')
@@ -87,7 +87,7 @@ const Chat: React.FC = () => {
                   onChange={e => setValue(e.target.value)}
                   fullWidth
                   variant={'outlined'} />
-               <Button onClick={sendMessage} variant={'outlined'}>{t('SEND')}</Button>
+               <Button onClick={sendMessage} variant={'outlined'}>SEND</Button>
             </Grid>
          </Grid>
       </Container>

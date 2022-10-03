@@ -8,17 +8,13 @@ import Button from '@mui/material/Button';
 import { useContext } from 'react';
 import { Context } from '../App';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useTranslation } from 'react-i18next';
+
 
 const Navbar = () => {
    const { auth } = useContext(Context)
    const [user] = useAuthState(auth)
 
-   const { t, i18n } = useTranslation()
-   const toggle = () => {
-      i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
 
-   }
 
 
    return (
@@ -26,12 +22,12 @@ const Navbar = () => {
          <AppBar position="static">
             <Toolbar>
                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                  {t('Chat')}
+                  Chat
 
                </Typography>
-               <Button style={{ marginRight: 10 }} disabled={true} onClick={toggle} variant='outlined' color="inherit">{t('ENG')}</Button>
+               <Button style={{ marginRight: 10 }} disabled={true} variant='outlined' color="inherit">ENG</Button>
                {user ?
-                  <Button onClick={() => auth.signOut()} variant='outlined' color="inherit">{t('Sign out')}</Button> : null
+                  <Button onClick={() => auth.signOut()} variant='outlined' color="inherit">Sign out</Button> : null
                }
 
             </Toolbar>

@@ -5,14 +5,13 @@ import { Context } from '../../App'
 import { Box, Button, Grid } from '@mui/material'
 import { Container } from '@mui/system'
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { useTranslation } from 'react-i18next';
+
 
 
 
 
 const Login: React.FC = () => {
    const { auth } = useContext(Context)
-   const { t } = useTranslation()
    const login = async () => {
       try {
          const provider = new GoogleAuthProvider();
@@ -39,7 +38,7 @@ const Login: React.FC = () => {
                direction={'column'}
             >
                <Box >
-                  <Button onClick={login} variant='outlined'>{t('Sign in with google')}</Button>
+                  <Button onClick={login} variant='outlined'>Sign in with google</Button>
                </Box>
             </Grid>
          </Grid>
