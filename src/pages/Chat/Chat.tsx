@@ -87,7 +87,7 @@ const Chat: React.FC = () => {
                   onChange={e => setValue(e.target.value)}
                   fullWidth
                   variant={'outlined'} />
-               <Button onClick={sendMessage} variant={'outlined'}>{t('send')}</Button>
+               <Button onClick={sendMessage} variant={'outlined'}>{t('SEND')}</Button>
             </Grid>
          </Grid>
       </Container>

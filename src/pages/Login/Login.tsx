@@ -39,7 +39,7 @@ const Login: React.FC = () => {
                direction={'column'}
             >
                <Box >
-                  <Button onClick={login} variant='outlined'>{t('login button')}</Button>
+                  <Button onClick={login} variant='outlined'>{t('Sign in with google')}</Button>
                </Box>
             </Grid>
          </Grid>
