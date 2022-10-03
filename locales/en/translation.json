@@ -1,7 +1,7 @@
 {
-   "login button": "Sign in with google",
-   "lang": "ENG",
-   "chat": "Chat",
-   "signOut": "Sign out",
-   "send": "Send"
+   "Sign in with google": "Sign in with google",
+   "ENG": "ENG",
+   "Chat": "Chat",
+   "Sign out": "Sign out",
+   "SEND": "Send"
 }
