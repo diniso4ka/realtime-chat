@@ -3,6 +3,10 @@
    margin: 0;
 }
 
+html {
+   overflow: hidden;
+}
+
 .loader-wrapper {
    width: 100%;
    height: calc(100vh - 88px);
@@ -12,7 +16,6 @@
 }
 
 .lds-ring {
-
    width: 80px;
    height: 80px;
 }
