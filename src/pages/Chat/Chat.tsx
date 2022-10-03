@@ -56,13 +56,14 @@ const Chat: React.FC = () => {
          <Grid container
             justifyContent={'center'}
             style={{ height: window.innerHeight - 50, margin: '0' }}>
-            <div style={{ width: '80%', height: '60vh', border: '1px solid gray', overflowY: 'auto', marginTop: '5px' }}>
+            <div style={{ width: '80%', height: '60vh', border: '1px solid gray', overflowY: 'auto', marginTop: '5px', overflowX: 'clip' }}>
                {messages.sort((a, b) => a.createdAt - b.createdAt).map((message) =>
                   <div style={{
                      margin: 10,
                      border: message.uid === user.uid ? '2px solid green' : '2px dashed red',
                      marginLeft: message.uid === user.uid ? 'auto' : '10px',
                      width: 'fit-content',
+                     maxWidth: '80%',
                      padding: 5
                   }}
                   >
@@ -72,7 +73,7 @@ const Chat: React.FC = () => {
                         }} src={message.photoURL} />
                         <div>{message.displayName}</div>
                      </Grid>
-                     <div>{message.text}</div>
+                     <div className='message'>{message.text}</div>
                   </div>
                )}
             </div>

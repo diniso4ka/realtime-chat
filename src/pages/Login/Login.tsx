@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 
 const Login: React.FC = () => {
    const { auth } = useContext(Context)
-   const { t } = useTranslation('translation')
+   const { t } = useTranslation()
    const login = async () => {
       try {
          const provider = new GoogleAuthProvider();

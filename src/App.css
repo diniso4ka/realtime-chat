@@ -51,3 +51,8 @@
       transform: rotate(360deg);
    }
 }
+
+.message {
+   word-wrap: break-word;
+   max-width: 100%;
+}

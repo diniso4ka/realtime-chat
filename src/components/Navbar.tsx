@@ -1,4 +1,3 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
    const { auth } = useContext(Context)
-   const [user, initialising, error] = useAuthState(auth)
+   const [user] = useAuthState(auth)
 
    const { t, i18n } = useTranslation()
    const toggle = () => {
@@ -27,8 +26,8 @@ const Navbar = () => {
          <AppBar position="static">
             <Toolbar>
                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                  {t('chat    ')}
-                  СМЕНА ЯЗЫКА ВРЕМЕННО НЕ РАБОТАЕТ!
+                  {t('chat')}
+
                </Typography>
                <Button style={{ marginRight: 10 }} onClick={toggle} variant='outlined' color="inherit">{t('lang')}</Button>
                {user ?

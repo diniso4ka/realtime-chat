@@ -11,7 +11,7 @@ import React, { Suspense } from 'react';
 import Loader from './components/Loader';
 import { getFirestore } from "firebase/firestore";
 
-import './config/i18n';
+
 
 export const Context = React.createContext(null)
 
